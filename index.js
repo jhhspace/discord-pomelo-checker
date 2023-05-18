@@ -1,17 +1,21 @@
-const { Client } = require('discord.js');
+const { Client, IntentsBitField } = require('discord.js');
 const axios = require('axios');
 
 const client = new Client({
-    ws: { intents: ['GUILDS', 'GUILD_MESSAGES', 'DIRECT_MESSAGES'] }
+    intents: [
+        IntentsBitField.Flags.Guilds,
+        IntentsBitField.Flags.GuildMessages,
+        IntentsBitField.Flags.MessageContent
+    ]
 });
 
-const prefix = 'k!';
+const prefix = 'k!'
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}`);
 });
 
-client.on('message', async (message) => {
+client.on('messageCreate', async (message) => {
     if (!message.content.startsWith(prefix)) return;
 
     const args = message.content.slice(prefix.length).trim().split(/ +/);
