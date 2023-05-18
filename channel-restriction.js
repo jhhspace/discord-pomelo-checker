@@ -1,26 +1,29 @@
-const { Client } = require('discord.js');
+const { Client, IntentsBitField } = require('discord.js');
 const axios = require('axios');
 
 const client = new Client({
-    ws: { intents: ['GUILDS', 'GUILD_MESSAGES', 'DIRECT_MESSAGES'] }
+    intents: [
+        IntentsBitField.Flags.Guilds,
+        IntentsBitField.Flags.GuildMessages,
+        IntentsBitField.Flags.MessageContent
+    ]
 });
 
-const prefix = 'k!';
+const prefix = 'k!'; const channelID = "CHANNEL ID HERE"
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}`);
 });
 
-chnID = "CHANNEL ID HERE"
-
-client.on('message', async (message) => {
+client.on('messageCreate', async (message) => {
     if (!message.content.startsWith(prefix)) return;
 
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
+
     if (command === 'name') {
-        if (message.channel.id === `${chnID}`) {
-            const name = args[0];
+        if(message.channel.id != channelID) return
+        const name = args[0];
         const url = `https://api.lixqa.de/v2/discord/pomelo-lookup/?username=${name}`;
 
         try {
@@ -31,10 +34,6 @@ client.on('message', async (message) => {
             console.error('Error:', error);
             await message.channel.send('An error occurred while checking the username.');
         }
-        } else {
-            message.channel.send(`Please use ${chnID} for the name checking :)`)
-        }
-        
     }
 });
 
