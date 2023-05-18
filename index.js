@@ -9,7 +9,7 @@ const client = new Client({
     ]
 });
 
-const prefix = 'k!'; const channelID = "1107991371438096434"
+const prefix = 'k!'
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}`);
@@ -22,7 +22,6 @@ client.on('messageCreate', async (message) => {
     const command = args.shift().toLowerCase();
 
     if (command === 'name') {
-        if(message.channel.id != channelID) return
         const name = args[0];
         const url = `https://api.lixqa.de/v2/discord/pomelo-lookup/?username=${name}`;
 
