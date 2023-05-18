@@ -11,3 +11,6 @@ Replace the **TOKEN** with your **BOT TOKEN**
 
 ## How to run the bot
 Make sure you have **Nodejs** installed on your computer. Run `node index.js` to run the bot 
+
+## What is the channel-restriction.js?
+Use that if you would like to restrict the command to for example, #bots
