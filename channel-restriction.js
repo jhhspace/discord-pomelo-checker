@@ -9,7 +9,7 @@ const client = new Client({
     ]
 });
 
-const prefix = 'k!'; const channelID = "CHANNEL ID HERE"
+const prefix = 'k!'; const channelID = 'CHANNEL ID HERE'
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}`);
