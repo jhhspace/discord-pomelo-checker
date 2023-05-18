@@ -8,3 +8,6 @@ A Discord.JS Bot used to check for pomelo usernames
 
 ## What do you need to do to make it work?
 Replace the **TOKEN** with your **BOT TOKEN**
+
+## How to run the bot
+Make sure you have **Nodejs** installed on your computer. Run `node index.js` to run the bot 
