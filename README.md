@@ -13,3 +13,7 @@ Make sure you have **Nodejs** installed on your computer. Run `node index.js` to
 
 ## What is the channel-restriction.js?
 Use that if you would like to restrict the command to for example, #bots
+
+## Credits
+Lort533 (Vulnerability report)
+niksek11 (Updated the bot to Discord.JS V14)
