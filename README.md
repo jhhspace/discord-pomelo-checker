@@ -16,5 +16,5 @@ Use that if you would like to restrict the command to for example, #bots
 
 ## Credits
 Lort533 (Vulnerability report)
-\n
+
 niksek11 (Updated the bot to Discord.JS V14)
