@@ -38,11 +38,19 @@ client.on('messageCreate', async (message) => {
         try {
             const response = await axios.get(url);
             const messageText = response.data.message;
+            await message.delete();
             await message.channel.send(`${message.author}, the username you've asked for, __**${name}**__, is: **${messageText}**`);
         } catch (error) {
             console.error('Error:', error);
             await message.channel.send('An error occurred while checking the username.');
         }
+    } else {
+        message.delete();
+        const reply = await message.channel.send(`${message.author}, please use <#${channelID}> for name checking~`);
+
+        setTimeout(() => {
+            reply.delete().catch(console.error);
+        }, 10000);
     }
 });
 
