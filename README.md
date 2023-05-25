@@ -15,6 +15,6 @@ Make sure you have **Nodejs** installed on your computer. Run `node index.js` to
 Use that if you would like to restrict the command to for example, #bots
 
 ## Credits
-Lort533 (Vulnerability report)
+Lort533 (Vulnerability report, Bug report)
 
 niksek11 (Updated the bot to Discord.JS V14)
