@@ -25,7 +25,7 @@ client.on('messageCreate', async (message) => {
     if (command === 'name') {
         if (message.channelId !== channelID) return;
 
-        const name = args[0];
+        const name = args[0].toLowerCase();
 
         // Vulnerability fixes
         if (!name.match(/^[_\.A-Za-z0-9]+$/)) {
