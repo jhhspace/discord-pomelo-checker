@@ -22,7 +22,7 @@ client.on('messageCreate', async (message) => {
     const command = args.shift().toLowerCase();
 
     if (command === 'name') {
-        const name = args[0];
+        const name = args[0].toLowerCase();
 
         // Vulnerability fixes
         if (!name.match(/^[_\.A-Za-z0-9]+$/)) {
