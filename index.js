@@ -1,3 +1,5 @@
+// The API in use is now private and unavailable to the public
+
 const { Client, Intents } = require('discord.js');
 const axios = require('axios');
 
